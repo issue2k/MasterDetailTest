@@ -28,15 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
     [self.objects insertObject:@"AnotherMenuEntry1" atIndex:0];
     [self.objects insertObject:@"AnotherMenuEntry2" atIndex:1];
+    
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (void)didReceiveMemoryWarning {

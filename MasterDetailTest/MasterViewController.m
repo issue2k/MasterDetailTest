@@ -29,8 +29,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
@@ -92,6 +90,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Another" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"MasterViewController2"];
+    vc.splitViewController.viewControllers = self.splitViewController.viewControllers;
     [self showViewController:vc sender:self];
 }
 
