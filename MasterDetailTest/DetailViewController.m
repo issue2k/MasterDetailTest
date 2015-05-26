@@ -30,6 +30,7 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
+    self.navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
 - (void)viewDidLoad {

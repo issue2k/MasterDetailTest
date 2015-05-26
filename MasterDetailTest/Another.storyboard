@@ -33,8 +33,27 @@
                             <outlet property="delegate" destination="5QF-oC-cU1" id="20e-Nt-QXS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="S2l-On-LII"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ev-3F-OFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="457"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZ6-nG-GNa">
+            <objects>
+                <navigationController storyboardIdentifier="MasterViewController2Navigation" automaticallyAdjustsScrollViewInsets="NO" id="diV-cq-Lun" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TnZ-WY-CTq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5QF-oC-cU1" kind="relationship" relationship="rootViewController" id="oxI-Ls-eKA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGX-uW-JCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="444" y="457"/>
         </scene>

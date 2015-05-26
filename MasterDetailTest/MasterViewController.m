@@ -90,7 +90,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Another" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"MasterViewController2"];
-    vc.splitViewController.viewControllers = self.splitViewController.viewControllers;
     [self showViewController:vc sender:self];
 }
 

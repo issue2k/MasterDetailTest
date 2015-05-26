@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
@@ -73,9 +73,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DetailViewController *vc = (DetailViewController *)[sb instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    UINavigationController *vc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"DetailViewController"];
     NSDate *object = self.objects[indexPath.row];
-    [vc setDetailItem:object];
+    DetailViewController *detail = (DetailViewController *)[[vc viewControllers] lastObject];
+    [detail setDetailItem:object];
     vc.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     vc.navigationItem.leftItemsSupplementBackButton = YES;
     [self showDetailViewController:vc sender:self];
