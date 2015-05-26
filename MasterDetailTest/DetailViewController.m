@@ -30,7 +30,13 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
-    self.navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    // Check for back button (on iPhone devices)
+    int n = [self.navigationController.viewControllers count] - 2;
+    if (n >= 0) {
+        if ([(UIViewController*)[self.navigationController.viewControllers objectAtIndex:n] navigationItem].backBarButtonItem == nil) {
+            self.navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        }
+    }
 }
 
 - (void)viewDidLoad {
